@@ -8,5 +8,5 @@ nav_order: 5
 # description:
 # toc:
 #   sidebar: left
-redirect_to: /assets/pdf/Ying_Zhang_Resume.pdf
+redirect_to: Ying_Zhang_Resume.pdf
 ---
