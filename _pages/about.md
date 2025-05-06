@@ -9,7 +9,7 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>Mudd Room 3614</p>
+    <p>Mudd Room 3416</p>
     <p>2233 Tech Drive</p>
     <p>Evanston, IL 60208</p>
 
