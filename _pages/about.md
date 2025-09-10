@@ -20,7 +20,7 @@ social: true # includes social icons at the bottom of the page
 
 Hi there!
 
-I am Ying Zhang, first-year PhD student in the [Department of Computer Science](https://aqualab.cs.northwestern.edu/) at [Northwestern University](https://www.northwestern.edu/), where I work with Prof. [Fabian E. Bustamante](https://users.cs.northwestern.edu/~fabianb/) at [AquaLab](https://aqualab.cs.northwestern.edu/).
+I am Ying Zhang, first-year PhD student in the [Department of Computer Science](https://aqualab.cs.northwestern.edu/) at [Northwestern University](https://www.northwestern.edu/), where I work with Prof. [Fabián E. Bustamante](https://users.cs.northwestern.edu/~fabianb/) at [AquaLab](https://aqualab.cs.northwestern.edu/).
 
 My research interest focuses on Networkings and Systems, especially measuring the consolidation and reliability of Internet. I am particularly insterested in and working on Submarine Cable Networks (SCNs), Video streaming qualities and Content Delivery Networks (CDNs).
 
