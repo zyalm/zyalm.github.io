@@ -1,5 +1,21 @@
 <ul class="card-text font-weight-light list-group list-group-flush">
-  {% assign education = data[1] | sort: 'startDate' | reverse %}
+  {% assign source = include.data | default: site.data.cv %}
+  {% assign education = nil %}
+  {% if source == '' or source == nil %}
+    {% assign education = nil %}
+  {% elsif source.first.contents %}
+    {% if include.section_title %}
+      {% assign section = source | where: 'title', include.section_title | first %}
+    {% else %}
+      {% assign section = source[1] %}
+    {% endif %}
+    {% assign education = section.contents %}
+  {% else %}
+    {% assign education = source %}
+  {% endif %}
+  {% if education and education != '' %}
+    {% assign education = education | sort: 'startDate' | reverse %}
+  {% endif %}
   {% for content in education %}
     <li class="list-group-item">
       <div class="row">
