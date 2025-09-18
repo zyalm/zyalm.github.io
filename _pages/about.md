@@ -25,3 +25,9 @@ I am Ying Zhang, second-year PhD student in the [Department of Computer Science]
 My research interest focuses on Networkings and Systems, especially measuring the consolidation and reliability of Internet. I am particularly insterested in and working on Submarine Cable Networks (SCNs), Video streaming qualities and Content Delivery Networks (CDNs).
 
 Previously, I completed my Bachelor's at University of Wisconsin-Madison and Master's at Northwestern University. My past work experience resonates with my research, I had industry experiences at Bytedance Inc and Rubrik Inc.
+
+## Education
+{% include sections/education.html %}
+
+## Experience
+{% include sections/experience.html %}
