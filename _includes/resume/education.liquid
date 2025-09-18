@@ -20,13 +20,13 @@
     <li class="list-group-item">
       <div class="row">
         <div class="col-xs-2 cl-sm-2 col-md-2 text-center date-column">
+          {% assign date = nil %}
           {% if content.startDate and content.startDate != '' %}
             {% assign startDate = content.startDate | split: '-' | slice: 0, 2 | join: '.' %}
             {% assign endDate = content.endDate | split: '-' | slice: 0, 2 | join: '.' | default: 'Present' %}
-            {% assign date = startDate | append: ' - ' %}
-            {% assign date = date | append: endDate %}
-          {% else %}
-            {% assign date = null %}
+            {% assign date = startDate | append: ' - ' | append: endDate %}
+          {% elsif content.year %}
+            {% assign date = content.year %}
           {% endif %}
           <table class="table-cv">
             <tbody>
@@ -51,18 +51,31 @@
           </table>
         </div>
         <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
+          {% assign heading = content.studyType | default: content.title %}
+          {% assign area = content.area | default: content.degree %}
           <h6 class="title font-weight-bold ml-1 ml-md-4">
-            <a href="{{ content.url }}">{{ content.studyType }}</a>
+            {% if content.url %}
+              <a href="{{ content.url }}">{{ heading }}</a>
+            {% else %}
+              {{ heading }}
+            {% endif %}
           </h6>
-          <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">{{ content.institution }}</h6>
-          <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem; font-style: italic">{{ content.area }}</h6>
-          <ul class="items">
-            {% for item in content.courses %}
-              <li>
-                <span class="item">{{ item }}</span>
-              </li>
-            {% endfor %}
-          </ul>
+          {% if content.institution %}
+            <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">{{ content.institution }}</h6>
+          {% endif %}
+          {% if area %}
+            <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem; font-style: italic">{{ area }}</h6>
+          {% endif %}
+          {% assign bullet_items = content.courses | default: content.description %}
+          {% if bullet_items %}
+            <ul class="items">
+              {% for item in bullet_items %}
+                <li>
+                  <span class="item">{{ item }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
         </div>
       </div>
     </li>
