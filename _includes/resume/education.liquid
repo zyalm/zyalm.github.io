@@ -60,7 +60,9 @@
                   {{ '/assets/img/' | append: content.logo | relative_url }}
                 {% endif %}
               {% endcapture %}
-              <img class="resume-logo" src="{{ logo_src | strip }}" alt="{{ content.institution | default: heading }} logo">
+              <div class="resume-logo-wrap">
+                <img class="resume-logo" src="{{ logo_src | strip }}" alt="{{ content.institution | default: heading }} logo">
+              </div>
             {% endif %}
             <div class="resume-entry-text">
           {% assign heading = content.studyType | default: content.title %}

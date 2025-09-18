@@ -14,7 +14,7 @@
     {% assign work = source %}
   {% endif %}
   {% if work and work != '' %}
-    {% assign work = work | sort: 'endDate' | reverse %}
+    {% assign work = work | sort: 'startDate' | reverse %}
   {% endif %}
   {% for content in work %}
     <li class="list-group-item">
