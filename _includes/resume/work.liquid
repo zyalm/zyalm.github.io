@@ -14,7 +14,7 @@
     {% assign work = source %}
   {% endif %}
   {% if work and work != '' %}
-    {% assign work = work | sort: 'startDate' | reverse %}
+    {% assign work = work | sort: 'endDate' | reverse %}
   {% endif %}
   {% for content in work %}
     <li class="list-group-item">
@@ -66,7 +66,7 @@
               {% assign heading = content.position | default: content.title %}
               {% assign company = content.name | default: content.institution %}
               {% assign summary = content.summary | default: content.role %}
-              <h6 class="title font-weight-bold ml-1 ml-md-4">
+              <h6 class="resume-title">
                 {% if content.url %}
                   <a href="{{ content.url }}">{{ heading }}</a>
                 {% else %}
@@ -74,17 +74,17 @@
                 {% endif %}
               </h6>
               {% if company %}
-                <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">{{ company }}</h6>
+                <h6 class="resume-subtitle">{{ company }}</h6>
               {% endif %}
               {% if summary %}
-                <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem; font-style: italic">{{ summary }}</h6>
+                <h6 class="resume-meta">{{ summary }}</h6>
               {% endif %}
               {% assign bullet_items = content.highlights | default: content.description %}
               {% if bullet_items %}
-                <ul class="items">
+                <ul class="resume-items">
                   {% for item in bullet_items %}
                     <li>
-                      <span class="item">{{ item }}</span>
+                      <span class="resume-item">{{ item }}</span>
                     </li>
                   {% endfor %}
                 </ul>

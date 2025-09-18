@@ -65,7 +65,7 @@
             <div class="resume-entry-text">
           {% assign heading = content.studyType | default: content.title %}
           {% assign area = content.area | default: content.degree %}
-          <h6 class="title font-weight-bold ml-1 ml-md-4">
+          <h6 class="resume-title">
             {% if content.url %}
               <a href="{{ content.url }}">{{ heading }}</a>
             {% else %}
@@ -73,17 +73,17 @@
             {% endif %}
           </h6>
           {% if content.institution %}
-            <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">{{ content.institution }}</h6>
+            <h6 class="resume-subtitle">{{ content.institution }}</h6>
           {% endif %}
           {% if area %}
-            <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem; font-style: italic">{{ area }}</h6>
+            <h6 class="resume-meta">{{ area }}</h6>
           {% endif %}
           {% assign bullet_items = content.courses | default: content.description %}
           {% if bullet_items %}
-            <ul class="items">
+            <ul class="resume-items">
               {% for item in bullet_items %}
                 <li>
-                  <span class="item">{{ item }}</span>
+                  <span class="resume-item">{{ item }}</span>
                 </li>
               {% endfor %}
             </ul>

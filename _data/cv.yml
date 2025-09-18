@@ -14,6 +14,8 @@
     - title: PhD
       institution: Northwestern University, Evanston, IL, USA
       logo: northwestern.png
+      startDate: 2024-09
+      endDate: 9999-12
       year: Sep 2024 - Present
       description:
         - with Prof. Fabián E. Bustamante
@@ -21,12 +23,16 @@
     - title: MS
       institution: Northwestern University, Evanston, IL, USA
       logo: northwestern.png
+      startDate: 2022-09
+      endDate: 2023-12
       year: Sep 2022 - Dec 2023
       description:
         - Major in Computer Science
     - title: BS
       institution: University of Wisconsin-Madison, Madison, WI, USA
       logo: uw-madison.png
+      startDate: 2016-08
+      endDate: 2020-05
       year: Aug 2016 - May 2020
       description:
         - Major in Computer Science
@@ -38,16 +44,22 @@
     - title: VOD Algorithm Intern @ TikTok
       institution: TikTok, San Jose, CA, USA
       logo: tiktok.png
+      startDate: 2025-06
+      endDate: 2025-08
       year: Jun 2025 - Aug 2025
       description:
         - with Prof. Feng Qian
     - title: Software Engineer Intern @ Rubrik
       institution: Rubrik, Palo Alto, CA, USA
       logo: rubrik.png
+      startDate: 2024-06
+      endDate: 2024-09
       year: Jun 2024 - Sep 2024
     - title: Backend Software Engineer @ ByteDance
       institution: ByteDance, Beijing, China
       logo: bytedance.png
+      startDate: 2020-08
+      endDate: 2022-07
       year: Aug 2020 - July 2022
 
 - title: Open Source Projects
