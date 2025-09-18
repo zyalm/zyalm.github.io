@@ -2,6 +2,7 @@
 <html>
   <head>
     {% include head.liquid %}
+    {% include scripts/analytics.liquid %}
     {% if site.enable_medium_zoom %}
       <!-- Medium Zoom JS -->
       <script
@@ -132,7 +133,6 @@
     <!-- Footer -->
     {% include footer.liquid %}
     {% include scripts/bootstrap.liquid %}
-    {% include scripts/analytics.liquid %}
     {% include scripts/progressBar.liquid %}
     {% include scripts/back_to_top.liquid %}
     {% include scripts/search.liquid %}
