@@ -51,32 +51,46 @@
           </table>
         </div>
         <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
-          {% assign heading = content.position | default: content.title %}
-          {% assign company = content.name | default: content.institution %}
-          {% assign summary = content.summary | default: content.role %}
-          <h6 class="title font-weight-bold ml-1 ml-md-4">
-            {% if content.url %}
-              <a href="{{ content.url }}">{{ heading }}</a>
-            {% else %}
-              {{ heading }}
+          <div class="resume-entry-body">
+            {% if content.logo %}
+              {% capture logo_src %}
+                {% if content.logo contains '://' %}
+                  {{ content.logo | strip }}
+                {% else %}
+                  {{ '/assets/img/' | append: content.logo | relative_url }}
+                {% endif %}
+              {% endcapture %}
+              <img class="resume-logo" src="{{ logo_src | strip }}" alt="{{ (content.name | default: content.institution | default: heading) }} logo">
             {% endif %}
-          </h6>
-          {% if company %}
-            <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">{{ company }}</h6>
-          {% endif %}
-          {% if summary %}
-            <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem; font-style: italic">{{ summary }}</h6>
-          {% endif %}
-          {% assign bullet_items = content.highlights | default: content.description %}
-          {% if bullet_items %}
-            <ul class="items">
-              {% for item in bullet_items %}
-                <li>
-                  <span class="item">{{ item }}</span>
-                </li>
-              {% endfor %}
-            </ul>
-          {% endif %}
+            <div class="resume-entry-text">
+              {% assign heading = content.position | default: content.title %}
+              {% assign company = content.name | default: content.institution %}
+              {% assign summary = content.summary | default: content.role %}
+              <h6 class="title font-weight-bold ml-1 ml-md-4">
+                {% if content.url %}
+                  <a href="{{ content.url }}">{{ heading }}</a>
+                {% else %}
+                  {{ heading }}
+                {% endif %}
+              </h6>
+              {% if company %}
+                <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">{{ company }}</h6>
+              {% endif %}
+              {% if summary %}
+                <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem; font-style: italic">{{ summary }}</h6>
+              {% endif %}
+              {% assign bullet_items = content.highlights | default: content.description %}
+              {% if bullet_items %}
+                <ul class="items">
+                  {% for item in bullet_items %}
+                    <li>
+                      <span class="item">{{ item }}</span>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+          </div>
         </div>
       </div>
     </li>

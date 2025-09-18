@@ -51,6 +51,18 @@
           </table>
         </div>
         <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
+          <div class="resume-entry-body">
+            {% if content.logo %}
+              {% capture logo_src %}
+                {% if content.logo contains '://' %}
+                  {{ content.logo | strip }}
+                {% else %}
+                  {{ '/assets/img/' | append: content.logo | relative_url }}
+                {% endif %}
+              {% endcapture %}
+              <img class="resume-logo" src="{{ logo_src | strip }}" alt="{{ content.institution | default: heading }} logo">
+            {% endif %}
+            <div class="resume-entry-text">
           {% assign heading = content.studyType | default: content.title %}
           {% assign area = content.area | default: content.degree %}
           <h6 class="title font-weight-bold ml-1 ml-md-4">
@@ -76,6 +88,8 @@
               {% endfor %}
             </ul>
           {% endif %}
+            </div>
+          </div>
         </div>
       </div>
     </li>
