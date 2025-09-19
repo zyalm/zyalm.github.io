@@ -6,8 +6,8 @@ nav: true
 nav_order: 4
 ---
 
-#Experience
+# Experience
 {% include resume/education.liquid data=site.data.cv section_title="Experience" %}
 
-#Education
+# Education
 {% include resume/education.liquid data=site.data.cv section_title="Education" %}
