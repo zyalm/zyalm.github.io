@@ -44,12 +44,19 @@
       year: Jun 2025 - Aug 2025
       description: Manager Prof. Feng Qian
 
+    - title: Software Engineer @ Rubrik
+      institution: Rubrik, Palo Alto, CA, USA
+      logo: rubrik.png
+      startDate: 2024-02
+      endDate: 2024-09
+      year: Feb 2024 - Sep 2024
+
     - title: Software Engineer Intern @ Rubrik
       institution: Rubrik, Palo Alto, CA, USA
       logo: rubrik.png
-      startDate: 2024-06
-      endDate: 2024-09
-      year: Jun 2024 - Sep 2024
+      startDate: 2023-06
+      endDate: 2023-09
+      year: Jun 2023 - Sep 2023
 
     - title: Backend Software Engineer @ ByteDance
       institution: ByteDance, Beijing, China
