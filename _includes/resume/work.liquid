@@ -1,4 +1,5 @@
-<ul class="card-text font-weight-light list-group list-group-flush">
+<div class="cv-section">
+  <ul class="card-text font-weight-light list-group list-group-flush">
   {% assign source = include.data | default: site.data.cv %}
   {% assign work = nil %}
   {% if source == '' or source == nil %}
@@ -17,7 +18,7 @@
     {% assign work = work | sort: 'startDate' | reverse %}
   {% endif %}
   {% for content in work %}
-    <li class="list-group-item">
+    <li class="list-group-item cv-entry">
       <div class="row">
         <div class="col-xs-2 cl-sm-2 col-md-2 text-center date-column">
           {% assign date = '' %}
@@ -95,4 +96,5 @@
       </div>
     </li>
   {% endfor %}
-</ul>
+  </ul>
+</div>
