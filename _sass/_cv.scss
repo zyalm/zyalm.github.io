@@ -2,6 +2,123 @@
  * CV shared styles
  *****************************/
 
+.cv-section {
+  display: grid;
+  gap: 1.8rem;
+  margin: 2rem 0 3rem;
+}
+
+.cv-entry {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.4rem;
+  align-items: flex-start;
+}
+
+.cv-logo-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 0.45rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  background: #fff;
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cv-logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.cv-entry-body {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+}
+
+.cv-entry-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.cv-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.cv-subtitle {
+  margin: 0.2rem 0 0;
+  font-size: 0.95rem;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.cv-meta {
+  margin: 0.2rem 0 0;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.cv-items {
+  margin: 0.6rem 0 0;
+  padding-left: 1.2rem;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.cv-items li {
+  margin-bottom: 0.3rem;
+}
+
+.cv-item {
+  display: inline-block;
+}
+
+.cv-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.cv-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: #31363f;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+@media (max-width: 576px) {
+  .cv-entry {
+    grid-template-columns: 56px 1fr;
+    gap: 0.9rem;
+  }
+
+  .cv-logo-wrap {
+    width: 40px;
+    height: 40px;
+    padding: 0.25rem;
+  }
+
+  .cv-entry-body {
+    gap: 0.75rem;
+  }
+
+  .cv-tag {
+    font-size: 0.8rem;
+  }
+}
+
 div.container-link-button {
   margin-right: 0.5rem;
 }

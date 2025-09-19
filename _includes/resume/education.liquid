@@ -51,7 +51,7 @@
           </table>
         </div>
         <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
-          <div class="resume-entry-body">
+          <div class="cv-entry-body">
             {% if content.logo %}
               {% capture logo_src %}
                 {% if content.logo contains '://' %}
@@ -60,14 +60,14 @@
                   {{ '/assets/img/' | append: content.logo | relative_url }}
                 {% endif %}
               {% endcapture %}
-              <div class="resume-logo-wrap">
-                <img class="resume-logo" src="{{ logo_src | strip }}" alt="{{ content.institution | default: heading }} logo">
+              <div class="cv-logo-wrap">
+                <img class="cv-logo" src="{{ logo_src | strip }}" alt="{{ content.institution | default: heading }} logo">
               </div>
             {% endif %}
-            <div class="resume-entry-text">
+            <div class="cv-entry-text">
           {% assign heading = content.studyType | default: content.title %}
           {% assign area = content.area | default: content.degree %}
-          <h6 class="resume-title">
+          <h6 class="cv-title">
             {% if content.url %}
               <a href="{{ content.url }}">{{ heading }}</a>
             {% else %}
@@ -75,17 +75,17 @@
             {% endif %}
           </h6>
           {% if content.institution %}
-            <h6 class="resume-subtitle">{{ content.institution }}</h6>
+            <h6 class="cv-subtitle">{{ content.institution }}</h6>
           {% endif %}
           {% if area %}
-            <h6 class="resume-meta">{{ area }}</h6>
+            <h6 class="cv-meta">{{ area }}</h6>
           {% endif %}
           {% assign bullet_items = content.courses | default: content.description %}
           {% if bullet_items %}
-            <ul class="resume-items">
+            <ul class="cv-items">
               {% for item in bullet_items %}
                 <li>
-                  <span class="resume-item">{{ item }}</span>
+                  <span class="cv-item">{{ item }}</span>
                 </li>
               {% endfor %}
             </ul>
