@@ -1,6 +1,6 @@
 ---
 layout: about
-title: "Ying Zhang"
+title: about
 permalink: /
 description: "Ying Zhang is a PhD student in Computer Science at Northwestern University (AquaLab) focusing on networking & systems, submarine cable networks, CDNs, and video streaming quality."
 # subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
@@ -28,8 +28,6 @@ My research interest focuses on Networkings and Systems, especially measuring th
 Previously, I completed my Bachelor's at University of Wisconsin-Madison and Master's at Northwestern University. My past work experience resonates with my research, I had industry experiences at Bytedance Inc and Rubrik Inc.
 
 ---
-
-*Preferred citation/anchor text for linking:* **Ying Zhang, PhD student, Northwestern University**.
 
 <!-- Structured data to help Google associate this page with your name and affiliation -->
 <script type="application/ld+json">
