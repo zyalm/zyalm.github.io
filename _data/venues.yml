@@ -9,9 +9,9 @@
   color: "#009f36"
 
 "IMC":
-  url: https://conferences.sigcomm.org/imc/
-  color: "#0b5fa5"
+  url: https://www.sigcomm.org/about-us
+  color: "#7faed6"
 
 "SIGCOMM":
   url: https://conferences.sigcomm.org/
-  color: "#b34700"
+  color: "#d39a74"
