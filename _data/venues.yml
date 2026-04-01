@@ -7,3 +7,11 @@
 
 "Vision":
   color: "#009f36"
+
+"IMC":
+  url: https://conferences.sigcomm.org/imc/
+  color: "#0b5fa5"
+
+"SIGCOMM":
+  url: https://conferences.sigcomm.org/
+  color: "#b34700"
