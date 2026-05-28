@@ -1,100 +1,100 @@
 <div class="cv-section">
   <ul class="card-text font-weight-light list-group list-group-flush">
-  {% assign source = include.data | default: site.data.cv %}
-  {% assign work = nil %}
-  {% if source == '' or source == nil %}
-    {% assign work = nil %}
-  {% elsif source.first.contents %}
-    {% if include.section_title %}
-      {% assign section = source | where: 'title', include.section_title | first %}
+    {% assign source = include.data | default: site.data.cv %}
+    {% assign work = null %}
+    {% if source == '' or source == null %}
+      {% assign work = null %}
+    {% elsif source.first.contents %}
+      {% if include.section_title %}
+        {% assign section = source | where: 'title', include.section_title | first %}
+      {% else %}
+        {% assign section = source[2] %}
+      {% endif %}
+      {% assign work = section.contents %}
     {% else %}
-      {% assign section = source[2] %}
+      {% assign work = source %}
     {% endif %}
-    {% assign work = section.contents %}
-  {% else %}
-    {% assign work = source %}
-  {% endif %}
-  {% if work and work != '' %}
-    {% assign work = work | sort: 'startDate' | reverse %}
-  {% endif %}
-  {% for content in work %}
-    <li class="list-group-item cv-entry">
-      <div class="row">
-        <div class="col-xs-2 cl-sm-2 col-md-2 text-center date-column">
-          {% assign date = '' %}
-          {% if content.startDate and content.startDate != '' %}
-            {% assign startDate = content.startDate | split: '-' | slice: 0, 2 | join: '.' %}
-            {% assign endDate = content.endDate | split: '-' | slice: 0, 2 | join: '.' | default: 'Present' %}
-            {% assign date = startDate | append: ' - ' | append: endDate %}
-          {% elsif content.year %}
-            {% assign date = content.year %}
-          {% endif %}
-          <table class="table-cv">
-            <tbody>
-              <tr>
-                <td>
-                  {% if date %}
-                    <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px"> {{ date }} </span>
-                  {% endif %}
-                </td>
-              </tr>
-              {% if content.location %}
+    {% if work and work != '' %}
+      {% assign work = work | sort: 'startDate' | reverse %}
+    {% endif %}
+    {% for content in work %}
+      <li class="list-group-item cv-entry">
+        <div class="row">
+          <div class="col-xs-2 cl-sm-2 col-md-2 text-center date-column">
+            {% assign date = '' %}
+            {% if content.startDate and content.startDate != '' %}
+              {% assign startDate = content.startDate | split: '-' | slice: 0, 2 | join: '.' %}
+              {% assign endDate = content.endDate | split: '-' | slice: 0, 2 | join: '.' | default: 'Present' %}
+              {% assign date = startDate | append: ' - ' | append: endDate %}
+            {% elsif content.year %}
+              {% assign date = content.year %}
+            {% endif %}
+            <table class="table-cv">
+              <tbody>
                 <tr>
                   <td>
-                    <p class="location">
-                      <i class="fa-solid fa-location-dot iconlocation"></i>
-                      {{ content.location }}
-                    </p>
+                    {% if date %}
+                      <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px"> {{ date }} </span>
+                    {% endif %}
                   </td>
                 </tr>
-              {% endif %}
-            </tbody>
-          </table>
-        </div>
-        <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
-          <div class="cv-entry-body">
-            {% if content.logo %}
-              {% capture logo_src %}
+                {% if content.location %}
+                  <tr>
+                    <td>
+                      <p class="location">
+                        <i class="fa-solid fa-location-dot iconlocation"></i>
+                        {{ content.location }}
+                      </p>
+                    </td>
+                  </tr>
+                {% endif %}
+              </tbody>
+            </table>
+          </div>
+          <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
+            <div class="cv-entry-body">
+              {% if content.logo %}
+                {% capture logo_src %}
                 {% if content.logo contains '://' %}
                   {{ content.logo | strip }}
                 {% else %}
                   {{ '/assets/img/' | append: content.logo | relative_url }}
                 {% endif %}
               {% endcapture %}
-              <img class="cv-logo" src="{{ logo_src | strip }}" alt="{{ (content.name | default: content.institution | default: heading) }} logo">
-            {% endif %}
-            <div class="cv-entry-text">
-              {% assign heading = content.position | default: content.title %}
-              {% assign company = content.name | default: content.institution %}
-              {% assign summary = content.summary | default: content.role %}
-              <h6 class="cv-title">
-                {% if content.url %}
-                  <a href="{{ content.url }}">{{ heading }}</a>
-                {% else %}
-                  {{ heading }}
+                <img class="cv-logo" src="{{ logo_src | strip }}" alt="{{ (content.name | default: content.institution | default: heading) }} logo">
+              {% endif %}
+              <div class="cv-entry-text">
+                {% assign heading = content.position | default: content.title %}
+                {% assign company = content.name | default: content.institution %}
+                {% assign summary = content.summary | default: content.role %}
+                <h6 class="cv-title">
+                  {% if content.url %}
+                    <a href="{{ content.url }}">{{ heading }}</a>
+                  {% else %}
+                    {{ heading }}
+                  {% endif %}
+                </h6>
+                {% if company %}
+                  <h6 class="cv-subtitle">{{ company }}</h6>
                 {% endif %}
-              </h6>
-              {% if company %}
-                <h6 class="cv-subtitle">{{ company }}</h6>
-              {% endif %}
-              {% if summary %}
-                <h6 class="cv-meta">{{ summary }}</h6>
-              {% endif %}
-              {% assign bullet_items = content.highlights | default: content.description %}
-              {% if bullet_items %}
-                <ul class="cv-items">
-                  {% for item in bullet_items %}
-                    <li>
-                      <span class="cv-item">{{ item }}</span>
-                    </li>
-                  {% endfor %}
-                </ul>
-              {% endif %}
+                {% if summary %}
+                  <h6 class="cv-meta">{{ summary }}</h6>
+                {% endif %}
+                {% assign bullet_items = content.highlights | default: content.description %}
+                {% if bullet_items %}
+                  <ul class="cv-items">
+                    {% for item in bullet_items %}
+                      <li>
+                        <span class="cv-item">{{ item }}</span>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </li>
-  {% endfor %}
+      </li>
+    {% endfor %}
   </ul>
 </div>

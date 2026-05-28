@@ -10,8 +10,9 @@ layout: default
   <article>
     {% if page.cv_pdf %}
       <div class="cv-container">
-        <object data="{{ page.cv_pdf | prepend: '/assets/pdf/' | relative_url }}#pagemode=none" width="100%" height="1000" type='application/pdf'>
-          <p>Your browser doesn't support PDFs. 
+        <object data="{{ page.cv_pdf | prepend: '/assets/pdf/' | relative_url }}#pagemode=none" width="100%" height="1000" type="application/pdf">
+          <p>
+            Your browser doesn't support PDFs.
             <a href="{{ page.cv_pdf | prepend: '/assets/pdf/' | relative_url }}" target="_blank">Download the PDF</a>.
           </p>
         </object>

@@ -6,7 +6,7 @@
       {%- if entry.abbr -%}
         {% assign venue_key = entry.abbr %}
         {% assign venue = site.data.venues[venue_key] %}
-        {% if venue == nil %}
+        {% if venue == null %}
           {% assign venue_key = entry.abbr | split: "'" | first | split: ' ' | first %}
           {% assign venue = site.data.venues[venue_key] %}
         {% endif %}

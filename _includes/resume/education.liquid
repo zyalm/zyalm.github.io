@@ -1,8 +1,8 @@
 <ul class="card-text font-weight-light list-group list-group-flush">
   {% assign source = include.data | default: site.data.cv %}
-  {% assign education = nil %}
-  {% if source == '' or source == nil %}
-    {% assign education = nil %}
+  {% assign education = null %}
+  {% if source == '' or source == null %}
+    {% assign education = null %}
   {% elsif source.first.contents %}
     {% if include.section_title %}
       {% assign section = source | where: 'title', include.section_title | first %}
@@ -20,7 +20,7 @@
     <li class="list-group-item">
       <div class="row">
         <div class="col-xs-2 cl-sm-2 col-md-2 text-center date-column">
-          {% assign date = nil %}
+          {% assign date = null %}
           {% if content.startDate and content.startDate != '' %}
             {% assign startDate = content.startDate | split: '-' | slice: 0, 2 | join: '.' %}
             {% assign endDate = content.endDate | split: '-' | slice: 0, 2 | join: '.' | default: 'Present' %}
@@ -65,31 +65,31 @@
               </div>
             {% endif %}
             <div class="cv-entry-text">
-          {% assign heading = content.studyType | default: content.title %}
-          {% assign area = content.area | default: content.degree %}
-          <h6 class="cv-title">
-            {% if content.url %}
-              <a href="{{ content.url }}">{{ heading }}</a>
-            {% else %}
-              {{ heading }}
-            {% endif %}
-          </h6>
-          {% if content.institution %}
-            <h6 class="cv-subtitle">{{ content.institution }}</h6>
-          {% endif %}
-          {% if area %}
-            <h6 class="cv-meta">{{ area }}</h6>
-          {% endif %}
-          {% assign bullet_items = content.courses | default: content.description %}
-          {% if bullet_items %}
-            <ul class="cv-items">
-              {% for item in bullet_items %}
-                <li>
-                  <span class="cv-item">{{ item }}</span>
-                </li>
-              {% endfor %}
-            </ul>
-          {% endif %}
+              {% assign heading = content.studyType | default: content.title %}
+              {% assign area = content.area | default: content.degree %}
+              <h6 class="cv-title">
+                {% if content.url %}
+                  <a href="{{ content.url }}">{{ heading }}</a>
+                {% else %}
+                  {{ heading }}
+                {% endif %}
+              </h6>
+              {% if content.institution %}
+                <h6 class="cv-subtitle">{{ content.institution }}</h6>
+              {% endif %}
+              {% if area %}
+                <h6 class="cv-meta">{{ area }}</h6>
+              {% endif %}
+              {% assign bullet_items = content.courses | default: content.description %}
+              {% if bullet_items %}
+                <ul class="cv-items">
+                  {% for item in bullet_items %}
+                    <li>
+                      <span class="cv-item">{{ item }}</span>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
             </div>
           </div>
         </div>
