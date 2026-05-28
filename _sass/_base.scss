@@ -499,6 +499,101 @@ footer.sticky-bottom {
   transform: translateX(-15px) translateY(-5px);
 }
 
+// News
+
+.news {
+  .news-panel {
+    border: 1px solid var(--global-divider-color);
+    border-radius: 18px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.02));
+    padding: 0.35rem 0.75rem;
+  }
+
+  .news-panel-scrollable {
+    max-height: 26rem;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--global-theme-color) transparent;
+  }
+
+  .news-panel-full {
+    max-height: 36rem;
+  }
+
+  .news-panel-scrollable::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .news-panel-scrollable::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .news-panel-scrollable::-webkit-scrollbar-thumb {
+    background-color: var(--global-theme-color);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  table {
+    margin-bottom: 0;
+  }
+
+  tr:not(:last-child) {
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+
+  th,
+  td {
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+    vertical-align: top;
+  }
+
+  .news-date {
+    width: 22%;
+    min-width: 8.5rem;
+    color: var(--global-theme-color);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+
+  .news-title {
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 767px) {
+  .news {
+    .news-panel {
+      padding: 0.2rem 0.55rem;
+    }
+
+    .news-panel-scrollable,
+    .news-panel-full {
+      max-height: 24rem;
+    }
+
+    .news-date {
+      display: block;
+      width: 100%;
+      min-width: 0;
+      padding-bottom: 0.2rem;
+    }
+
+    tr,
+    th,
+    td {
+      display: block;
+      width: 100%;
+    }
+
+    td {
+      padding-top: 0;
+    }
+  }
+}
+
 // Repositories
 
 @media (min-width: 768px) {
