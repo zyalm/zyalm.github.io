@@ -11,6 +11,9 @@
     {% if site.announcements.scrollable and news_size > 3 %}
       {% assign is_scrollable = true %}
     {% endif %}
+    {% unless include.limit %}
+      {% assign is_scrollable = true %}
+    {% endunless %}
     <div
       class="news-panel{% if is_scrollable %} news-panel-scrollable{% endif %}{% unless include.limit %} news-panel-full{% endunless %}"
     >
