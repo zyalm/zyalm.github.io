@@ -36,6 +36,14 @@
 - title: Experience
   type: time_table
   contents:
+    - title: Applied Scientist Intern @ Roblox
+      institution: Roblox, San Mateo, CA, USA
+      logo: roblox.png
+      startDate: 2026-06
+      endDate: 2026-09
+      year: Jun 2026 - Sep 2026
+      description: Manager Dr. Aemen Lodhi
+
     - title: VOD Algorithm Intern @ TikTok
       institution: TikTok, San Jose, CA, USA
       logo: tiktok.png
